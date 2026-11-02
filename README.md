@@ -1,14 +1,14 @@
 # Adeola Forge SaaS Starter
 
-Private studio template for Next.js 16 + Supabase client builds. Based on [NextBase Starter](https://github.com/imbhargav5/nextbase-nextjs-supabase-starter) (MIT, see `LICENSE`). Upstream docs follow below.
+A production-ready Next.js 16 + Supabase starter with a one-file rebrand, CI that actually runs, and security checks that fail the build before a leak ships. Based on [NextBase Starter](https://github.com/imbhargav5/nextbase-nextjs-supabase-starter) (MIT, see `LICENSE`). Upstream docs follow below.
 
-## Start a client project
+## Start a new project
 
-1. On GitHub, click **Use this template** → **Create a new repository**. Name it after the client, keep it private.
+1. On GitHub, click **Use this template** and then **Create a new repository**.
 2. Clone it, then run `pnpm install`.
 3. Rebrand in one file: `apps/web/src/styles/tokens.css`. Change `--brand-h` (hue), `--brand-c` (intensity) and `--brand-l` / `--brand-l-dark` (lightness). Re-check contrast after changing lightness.
 4. Update the site name and description in `apps/web/src/app/layout.tsx` metadata.
-5. Copy `apps/web/.env.test` to `apps/web/.env.local` and fill in the client's Supabase URL and publishable key. Never put a service-role key in any `NEXT_PUBLIC_` variable.
+5. Copy `apps/web/.env.test` to `apps/web/.env.local` and fill in your Supabase URL and publishable key. Never put a service-role key in any `NEXT_PUBLIC_` variable.
 6. Start Supabase locally (`cd apps/database && pnpm start`), then `pnpm dev`.
 7. Before launch, work through `SECURITY_BASELINE.md`.
 
@@ -17,12 +17,15 @@ Private studio template for Next.js 16 + Supabase client builds. Based on [NextB
 | Area | Change |
 |---|---|
 | Brand | `tokens.css` drives primary, ring, sidebar and chart colors in light and dark. Warm neutrals, ember accent, WCAG AA contrast checked |
-| CI | Upstream workflows only ran on the author's repo. Gates removed so CI runs on every client repo. Maintainer-only release and auto-update workflows removed |
+| CI | Upstream workflows only ran on the author's repo. Gates removed so CI runs on this repo and every repo made from it. Maintainer-only release and auto-update workflows removed |
 | Database tests | `supabase test db` now runs in CI. New `security_baseline_test.sql` fails if any public table lacks RLS or policies, or a SECURITY DEFINER function has no pinned `search_path` |
 | Migration | Pinned `search_path` on the upstream `set_private_item_owner_id` SECURITY DEFINER trigger |
 | Secrets | `security.yml` runs Gitleaks on every push and `scripts/check-client-secrets.mjs`, which blocks server env vars in `'use client'` files, secret-named `NEXT_PUBLIC_` vars and hardcoded service-role or live Stripe keys |
 
 ## Rules for every project built from this
+
+The client-secret check also exists as a standalone GitHub Action for any repo: [Secret Guard](https://github.com/Joyhacks/secret-guard). To check a deployed app from the outside, use [supabase-exposure-check](https://github.com/Joyhacks/supabase-exposure-check).
+
 
 - New table → RLS on and at least one policy in the same migration. The baseline test enforces it.
 - Server-only keys stay server-only. Server actions and route handlers only.
