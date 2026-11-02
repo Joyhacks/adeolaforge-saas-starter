@@ -1,3 +1,36 @@
+# Adeola Forge SaaS Starter
+
+Private studio template for Next.js 16 + Supabase client builds. Based on [NextBase Starter](https://github.com/imbhargav5/nextbase-nextjs-supabase-starter) (MIT, see `LICENSE`). Upstream docs follow below.
+
+## Start a client project
+
+1. On GitHub, click **Use this template** → **Create a new repository**. Name it after the client, keep it private.
+2. Clone it, then run `pnpm install`.
+3. Rebrand in one file: `apps/web/src/styles/tokens.css`. Change `--brand-h` (hue), `--brand-c` (intensity) and `--brand-l` / `--brand-l-dark` (lightness). Re-check contrast after changing lightness.
+4. Update the site name and description in `apps/web/src/app/layout.tsx` metadata.
+5. Copy `apps/web/.env.test` to `apps/web/.env.local` and fill in the client's Supabase URL and publishable key. Never put a service-role key in any `NEXT_PUBLIC_` variable.
+6. Start Supabase locally (`cd apps/database && pnpm start`), then `pnpm dev`.
+7. Before launch, work through `SECURITY_BASELINE.md`.
+
+## What this template adds over upstream
+
+| Area | Change |
+|---|---|
+| Brand | `tokens.css` drives primary, ring, sidebar and chart colors in light and dark. Warm neutrals, ember accent, WCAG AA contrast checked |
+| CI | Upstream workflows only ran on the author's repo. Gates removed so CI runs on every client repo. Maintainer-only release and auto-update workflows removed |
+| Database tests | `supabase test db` now runs in CI. New `security_baseline_test.sql` fails if any public table lacks RLS or policies, or a SECURITY DEFINER function has no pinned `search_path` |
+| Migration | Pinned `search_path` on the upstream `set_private_item_owner_id` SECURITY DEFINER trigger |
+| Secrets | `security.yml` runs Gitleaks on every push and `scripts/check-client-secrets.mjs`, which blocks server env vars in `'use client'` files, secret-named `NEXT_PUBLIC_` vars and hardcoded service-role or live Stripe keys |
+
+## Rules for every project built from this
+
+- New table → RLS on and at least one policy in the same migration. The baseline test enforces it.
+- Server-only keys stay server-only. Server actions and route handlers only.
+- Payments → verify webhook signatures and make handlers idempotent on the event id.
+- Ship label honesty: mark anything mocked, placeholder or awaiting credentials before handover.
+
+---
+
 # NextBase Starter — Open Source Next.js + Supabase Boilerplate
 
 > A production-grade Next.js 16 + Supabase foundation. Free, MIT-licensed, and ready to clone.

@@ -16,7 +16,6 @@ jobs:
     name: Playwright e2e
     runs-on: ubuntu-latest
     timeout-minutes: 45
-    if: ${{ github.repository == 'imbhargav5/nextbase-nextjs-supabase-starter' }}
     env:
       PORT: 3000
       NODE_ENV: test
@@ -100,6 +99,11 @@ jobs:
             sleep 1
           done
           echo "Inbucket is ready!"
+
+      - name: Run database tests (schema, RLS and security baseline)
+        run: |
+          cd apps/database
+          supabase test db
 
       - name: Build
         run: pnpm run build

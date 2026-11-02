@@ -25,8 +25,8 @@ const robotoMono = localFont({
 
 export const metadata = {
   title: {
-    default: 'Nextbase',
-    template: '%s · Nextbase',
+    default: 'Adeola Forge Starter',
+    template: '%s · Adeola Forge Starter',
   },
   description:
     'An open-source Next.js and Supabase starter for shipping secure products faster.',

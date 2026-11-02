@@ -1,0 +1,57 @@
+/*
+ * Adeola Forge brand tokens
+ * ------------------------------------------------------------------
+ * The single source of truth for a project's look. To rebrand for a
+ * client, change the --brand-* values below. Every shadcn token in
+ * globals.css (primary, ring, sidebar, charts) reads from these, so
+ * buttons, focus rings and charts follow automatically in light and
+ * dark mode.
+ *
+ * Contrast (WCAG 2.1) checked for the default ember palette:
+ *   light: primary button 5.4:1, primary text 5.5:1, muted text 5.9:1
+ *   dark:  primary button 7.9:1, primary text 8.0:1, muted text 7.8:1
+ * Re-check contrast after changing lightness or chroma. Keep text
+ * pairs at 4.5:1 or above.
+ */
+
+:root {
+  /* Brand: hue drives the accent, chroma its intensity */
+  --brand-h: 42;
+  --brand-c: 0.17;
+  --brand-l: 0.53;
+  --brand-l-dark: 0.74;
+
+  /* Neutrals: a slightly warm grey reads less generic than pure grey */
+  --neutral-h: 60;
+  --neutral-c: 0.008;
+
+  /* Type scale (1.2 minor third) */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.2rem;
+  --text-xl: 1.44rem;
+  --text-2xl: 1.728rem;
+  --text-3xl: 2.074rem;
+  --text-4xl: 2.488rem;
+  --leading-tight: 1.15;
+  --leading-body: 1.6;
+  --tracking-heading: -0.02em;
+
+  /* Spacing rhythm (4px base) for layout gaps and section padding */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+
+  /* Shape and motion */
+  --radius: 0.5rem;
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+}
