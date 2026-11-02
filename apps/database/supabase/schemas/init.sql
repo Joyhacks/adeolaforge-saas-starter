@@ -23,6 +23,7 @@ CREATE OR REPLACE FUNCTION public.set_private_item_owner_id()
 RETURNS trigger
 LANGUAGE plpgsql
 SECURITY DEFINER
+SET search_path = ''
 AS $$
 BEGIN
   IF NEW.owner_id IS NULL AND auth.uid() IS NOT NULL THEN
