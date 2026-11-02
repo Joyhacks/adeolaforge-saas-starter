@@ -3,7 +3,7 @@
   "changelog": [
     "@changesets/changelog-github",
     {
-      "repo": "imbhargav5/nextbase-nextjs-supabase-starter"
+      "repo": "Joyhacks/adeolaforge-saas-starter"
     }
   ],
   "commit": false,
@@ -12,7 +12,7 @@
   "access": "restricted",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["database", "@nextbase/typescript-config"],
+  "ignore": ["database", "@forge/typescript-config"],
   "privatePackages": {
     "version": true,
     "tag": false

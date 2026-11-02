@@ -24,6 +24,7 @@ import {
   ItemMedia,
   ItemTitle,
 } from '@/components/ui/item';
+import { REPO_URL } from '@/constants';
 
 const previewItems = ['Launch checklist', 'Customer notes', 'Product roadmap'];
 
@@ -56,7 +57,7 @@ export function HomeHero() {
             </Button>
             <Button asChild size="lg" variant="outline">
               <Link
-                href="https://github.com/imbhargav5/nextbase-nextjs-supabase-starter"
+                href={REPO_URL}
                 target="_blank"
                 rel="noreferrer"
               >

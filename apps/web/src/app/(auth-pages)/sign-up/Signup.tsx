@@ -18,6 +18,7 @@ import {
   signUpAction,
 } from '@/data/auth/auth';
 import type { AuthProvider } from '@/types';
+import { PRODUCT_NAME } from '@/constants';
 
 interface SignUpProps {
   next?: string;
@@ -102,7 +103,7 @@ export function SignUp({ next }: SignUpProps) {
 
   return (
     <AuthCard
-      title="Register to NextBase"
+      title={`Register to ${PRODUCT_NAME}`}
       description="Create your account and start with a secure, working foundation."
       footer={
         <p className="w-full text-center text-sm text-muted-foreground">

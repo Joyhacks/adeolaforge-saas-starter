@@ -1,6 +1,7 @@
 import { Blocks } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
+import { PRODUCT_NAME } from '@/constants';
 
 interface BrandProps {
   className?: string;
@@ -15,11 +16,11 @@ export function Brand({ className, showTagline = false }: BrandProps) {
       </span>
       <span className="grid min-w-0 text-left leading-tight">
         <span className="truncate text-sm font-semibold tracking-tight">
-          Nextbase
+          {PRODUCT_NAME}
         </span>
         {showTagline ? (
           <span className="truncate text-xs text-muted-foreground">
-            Open-source starter
+            Next.js and Supabase starter
           </span>
         ) : null}
       </span>

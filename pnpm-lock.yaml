@@ -33,7 +33,7 @@ importers:
         specifier: ^2.118.0
         version: 2.118.0
     devDependencies:
-      '@nextbase/typescript-config':
+      '@forge/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
 
@@ -286,7 +286,7 @@ importers:
         specifier: ^4.6.5
         version: 4.6.5
     devDependencies:
-      '@nextbase/typescript-config':
+      '@forge/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config
       oxlint:

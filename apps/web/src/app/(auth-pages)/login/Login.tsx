@@ -20,6 +20,7 @@ import {
   signInWithProviderAction,
 } from '@/data/auth/auth';
 import type { AuthProvider } from '@/types';
+import { PRODUCT_NAME } from '@/constants';
 
 export function Login({ next }: { next?: string }) {
   const [emailSentSuccessMessage, setEmailSentSuccessMessage] = useState<
@@ -116,11 +117,11 @@ export function Login({ next }: { next?: string }) {
 
   return (
     <AuthCard
-      title="Login to NextBase"
+      title={`Login to ${PRODUCT_NAME}`}
       description="Choose the sign-in method that works best for you."
       footer={
         <p className="w-full text-center text-sm text-muted-foreground">
-          New to Nextbase?{' '}
+          New to {PRODUCT_NAME}?{' '}
           <Button variant="link" className="h-auto px-0" asChild>
             <Link href="/sign-up">Create an account</Link>
           </Button>

@@ -4,18 +4,19 @@ import Link from 'next/link';
 import { Github } from '@/components/icons/github';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { PRODUCT_NAME, REPO_URL } from '@/constants';
 
 export function AboutHero() {
   return (
     <section className="mx-auto max-w-3xl py-10 text-center sm:py-16">
       <Badge variant="secondary" className="rounded-full px-3 py-1">
-        About Nextbase
+        About {PRODUCT_NAME}
       </Badge>
       <h1 className="mt-6 text-balance text-4xl font-semibold tracking-tight sm:text-6xl">
         A modern full-stack starter kit
       </h1>
       <p className="mx-auto mt-5 max-w-2xl text-pretty text-lg leading-8 text-muted-foreground">
-        Nextbase brings the essential parts of a secure SaaS product into one
+        {PRODUCT_NAME} brings the essential parts of a secure SaaS product into one
         approachable codebase, so you can start from a working system instead
         of a blank folder.
       </p>
@@ -28,7 +29,7 @@ export function AboutHero() {
         </Button>
         <Button size="lg" variant="outline" asChild>
           <Link
-            href="https://github.com/imbhargav5/nextbase-nextjs-supabase-starter"
+            href={REPO_URL}
             target="_blank"
             rel="noreferrer"
           >

@@ -134,7 +134,7 @@ async function SidebarHeaderContent() {
                 <Home className="size-4" />
               </div>
               <div className="grid flex-1 text-left text-sm leading-tight">
-                <span className="truncate font-semibold">Nextbase</span>
+                <span className="truncate font-semibold">Forge Starter</span>
                 <span className="truncate text-xs text-muted-foreground">
                   Open Source
                 </span>
@@ -482,7 +482,7 @@ async function CachedAppBranding() {
   return (
     <div>
       <Logo />
-      <AppName>Nextbase</AppName>
+      <AppName>Forge Starter</AppName>
     </div>
   );
 }

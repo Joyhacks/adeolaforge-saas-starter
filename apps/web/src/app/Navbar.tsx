@@ -24,6 +24,7 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
+import { PRODUCT_NAME, REPO_URL } from '@/constants';
 
 const navigation = [
   { href: '/', label: 'Home' },
@@ -34,7 +35,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/90 backdrop-blur-lg supports-[backdrop-filter]:bg-background/75">
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-4 px-4 sm:px-6 lg:px-8">
-        <Link href="/" aria-label="Nextbase home" className="shrink-0">
+        <Link href="/" aria-label={`${PRODUCT_NAME} home`} className="shrink-0">
           <Brand />
         </Link>
 
@@ -61,7 +62,7 @@ export default function Navbar() {
         <div className="ml-auto flex items-center gap-1.5">
           <Button variant="ghost" size="sm" asChild className="hidden lg:flex">
             <Link
-              href="https://github.com/imbhargav5/nextbase-nextjs-supabase-starter"
+              href={REPO_URL}
               target="_blank"
               rel="noreferrer"
             >

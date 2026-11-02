@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { PRODUCT_NAME } from '@/constants';
 
 export function HomeCTA() {
   return (
@@ -19,7 +20,7 @@ export function HomeCTA() {
               </h2>
               <p className="leading-7 text-muted-foreground">
                 Create an account, explore the protected workspace, and make
-                Nextbase your own.
+                {PRODUCT_NAME} your own.
               </p>
             </div>
           </div>

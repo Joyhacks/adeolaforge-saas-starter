@@ -12,6 +12,7 @@ import {
   ItemMedia,
   ItemTitle,
 } from '@/components/ui/item';
+import { PRODUCT_NAME } from '@/constants';
 
 const benefits = [
   'Secure Supabase authentication',
@@ -24,7 +25,7 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
     <div className="grid min-h-svh lg:grid-cols-2">
       <div className="flex min-h-svh flex-col">
         <header className="flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
-          <Link href="/" aria-label="Nextbase home">
+          <Link href="/" aria-label={`${PRODUCT_NAME} home`}>
             <Brand />
           </Link>
           <ModeToggle />
@@ -33,7 +34,7 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
           <div className="w-full max-w-md">{children}</div>
         </main>
         <footer className="px-6 py-5 text-center text-xs text-muted-foreground">
-          Secure local-first development with Nextbase.
+          Secure local-first development with {PRODUCT_NAME}.
         </footer>
       </div>
 

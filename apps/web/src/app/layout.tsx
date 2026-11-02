@@ -2,6 +2,7 @@ import '@/styles/globals.css';
 import localFont from 'next/font/local';
 import { DynamicLayoutProviders } from './DynamicLayoutProviders';
 import { ClientLayout } from './ClientLayout';
+import { PRODUCT_NAME } from '@/constants';
 
 const inter = localFont({
   src: [
@@ -25,8 +26,8 @@ const robotoMono = localFont({
 
 export const metadata = {
   title: {
-    default: 'Adeola Forge Starter',
-    template: '%s · Adeola Forge Starter',
+    default: PRODUCT_NAME,
+    template: `%s · ${PRODUCT_NAME}`,
   },
   description:
     'An open-source Next.js and Supabase starter for shipping secure products faster.',

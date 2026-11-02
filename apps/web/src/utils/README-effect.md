@@ -1,6 +1,6 @@
 # Effect Integration Guide
 
-This document explains how to use Effect for typed error handling in the utils layer of the Nextbase application.
+This document explains how to use Effect for typed error handling in the utils layer of the app.
 
 ## Overview
 
